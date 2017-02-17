@@ -4,9 +4,17 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'renans2',
     environment: environment,
-    rootURL: '/',
+    contentSecurityPolicy:{'conect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com"},
+    firebase: {
+      apiKey: "AIzaSyCpB6osa-jKW8HW7AfVZia2vnFc1esRm1c",
+      authDomain: "meuincrivelprojeto.firebaseapp.com",
+      databaseURL: "https://meuincrivelprojeto.firebaseio.com",
+      storageBucket: "meuincrivelprojeto.appspot.com",
+      messagingSenderId: "634839505681"
+    },
+    
     locationType: 'auto',
-    EmberENV: {
+    EmberENV: { //
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
@@ -47,4 +55,4 @@ module.exports = function(environment) {
   }
 
   return ENV;
-};
+  };

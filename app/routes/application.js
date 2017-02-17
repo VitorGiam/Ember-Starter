@@ -7,6 +7,5 @@ export default Ember.Route.extend({
     {name:'Salad', isAvaliable: true},
     {name:'Vegetables', isAvaliable: false},
     {name:'Fruit', isAvaliable: true}
-    ]
-  }
+    ]}
 });

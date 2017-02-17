@@ -7,14 +7,11 @@ export default Ember.Controller.extend({
   estaurant:{nome: 'Jurassik', yearOpen: 1},
 
   actions:{
-    wasClicked(elementName){
-      alert(' was clicled')
-    },
     makeUnavaliable(food){
-      Ember.set(food, 'isAvaliable', false)
+      Ember.set(food, 'isAvaliable', false);
     },
     makeAvaliable(food){
-      Ember.set(food, 'isAvaliable', true)
+      Ember.set(food, 'isAvaliable', true);
     }
   }
 });
