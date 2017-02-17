@@ -1,0 +1,9 @@
+li{
+  color: black;
+}
+li.not-avaliable{
+  color: gray;
+}
+#explanation{
+  color: blue;
+}
