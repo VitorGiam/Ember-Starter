@@ -1,17 +1,19 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  name :'Renan',
-  sobrenome: 'favoriteFood',
+  name :'',
+  favoriteFood: '',
 
   estaurant:{nome: 'Jurassik', yearOpen: 1},
 
   actions:{
     makeUnavaliable(food){
       Ember.set(food, 'isAvaliable', false);
+      food.save();
     },
     makeAvaliable(food){
       Ember.set(food, 'isAvaliable', true);
+      food.save();
     }
   }
 });
