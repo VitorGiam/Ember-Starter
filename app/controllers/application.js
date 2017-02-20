@@ -1,10 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  name :'',
-  favoriteFood: '',
 
-  estaurant:{nome: 'Jurassik', yearOpen: 1},
+  restaurant:{nome: 'Jurassik', hoursOpen: '24'},
+  //newItem: null,
 
   actions:{
     makeUnavaliable(food){
@@ -14,6 +13,16 @@ export default Ember.Controller.extend({
     makeAvaliable(food){
       Ember.set(food, 'isAvaliable', true);
       food.save();
+    },
+    saveNewItem(){
+      this.store.createRecord('food',{
+        isAvaliable: false,
+        name: this.get('newItem')
+      }).save();
+      this.set('newItem', '')
+    },
+    destroyItem(food){
+      food.destroyRecord();
     }
   }
 });

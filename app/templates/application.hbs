@@ -1,10 +1,9 @@
-<p>Bem-vindo ao restaurante: {{restaurant.nome}}</p>
+<p>Bem-vindo ao restaurante: {{restaurant.nome}}, aberto {{restaurant.hoursOpen}} horas</p>
 
-<h3>Seu nome: {{nome}}</h3>
 <p id="explanation">O melhores pratos gourmet da região de Narnia</p>
-<h3>Sua comida favorita: {{favoriteFood}}</h3>
 <ul>
   <h4>Pratos disponíveis</h4>
+  <p>Total de pratos: {{model.length}}</p>
     {{#each model as |food|}}
       {{#if food.isAvaliable}}
         <li>{{food.name}}!
@@ -13,10 +12,12 @@
       {{else}}
         <li class = "not-avaliable">{{food.name}}
         <button {{action 'makeAvaliable' food}}> Habilitar</button>
+        <button {{action 'destroyItem' food}}> Destruir </button>
       </li>
       {{/if}}
     {{/each}}
 </ul>
 <hr>
-<p>Comida favorita: {{input value= favoriteFood}}</p>
-<p>Seu nome: {{input value= nome}}</p>
+<p>Adicionar comida</p>
+{{input value = newItem}}
+<button {{action 'saveNewItem'}}>Salvar</button>
