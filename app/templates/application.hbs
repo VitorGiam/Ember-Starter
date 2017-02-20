@@ -2,8 +2,7 @@
 
 <p id="explanation">O melhores pratos gourmet da região de Narnia</p>
 <ul>
-  <h4>Pratos disponíveis</h4>
-  <p>Total de pratos: {{model.length}}</p>
+  <h4>{{availableItemsTotal}} de {{menuLength}} pratos disponíveis</h4>
     {{#each model as |food|}}
       {{#if food.isAvaliable}}
         <li>{{food.name}}!
@@ -18,6 +17,6 @@
     {{/each}}
 </ul>
 <hr>
-<p>Adicionar comida</p>
+<p>Adicionar prato</p>
 {{input value = newItem}}
 <button {{action 'saveNewItem'}}>Salvar</button>
