@@ -1,22 +1,6 @@
-<p>Bem-vindo ao restaurante: {{restaurant.nome}}, aberto {{restaurant.hoursOpen}} horas</p>
-
-<p id="explanation">O melhores pratos gourmet da região de Narnia</p>
-<ul>
-  <h4>{{availableItemsTotal}} de {{menuLength}} pratos disponíveis</h4>
-    {{#each model as |food|}}
-      {{#if food.isAvaliable}}
-        <li>{{food.name}}!
-        <button {{action 'makeUnavaliable' food}}> Desabilitar</button>
-        </li>
-      {{else}}
-        <li class = "not-avaliable">{{food.name}}
-        <button {{action 'makeAvaliable' food}}> Habilitar</button>
-        <button {{action 'destroyItem' food}}> Destruir </button>
-      </li>
-      {{/if}}
-    {{/each}}
-</ul>
+{{link-to 'Food' 'foods'}}
+{{link-to 'About' 'about'}}
+{{link-to 'Contato' 'contact'}}
 <hr>
-<p>Adicionar prato</p>
-{{input value = newItem}}
-<button {{action 'saveNewItem'}}>Salvar</button>
+
+{{outlet}}
