@@ -4,6 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'renans2',
     environment: environment,
+    rootURL: '/',
     contentSecurityPolicy:{'conect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com"},
     firebase: {
       apiKey: "AIzaSyCpB6osa-jKW8HW7AfVZia2vnFc1esRm1c",
@@ -12,7 +13,14 @@ module.exports = function(environment) {
       storageBucket: "meuincrivelprojeto.appspot.com",
       messagingSenderId: "634839505681"
     },
-    
+
+    // if using ember-cli-content-security-policy coisa do baby
+    // contentSecurityPolicy: {
+    //   'script-src': "'self' 'unsafe-eval' apis.google.com",
+    //   'frame-src': "'self' https://*.firebaseapp.com",
+    //   'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
+    // },
+    //
     locationType: 'auto',
     EmberENV: { //
       FEATURES: {

@@ -5,7 +5,8 @@
   <h4>{{availableItemsTotal}} de {{menuLength}} pratos disponíveis</h4>
     {{#each model as |food|}}
       {{#if food.isAvaliable}}
-        <li>{{food.name}}!
+        <li>
+          {{#link-to 'food' food.name}}{{food.name}}!{{/link-to}}
         <button {{action 'makeUnavaliable' food}}> Desabilitar</button>
         </li>
       {{else}}
@@ -20,5 +21,3 @@
 <p>Adicionar prato</p>
 {{input value = newItem}}
 <button {{action 'saveNewItem'}}>Salvar</button>
-
-{{link-to 'About' 'about'}}
