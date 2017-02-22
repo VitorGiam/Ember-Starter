@@ -26,7 +26,7 @@ export default Ember.Controller.extend({
         isAvaliable: false,
         name: this.get('newItem')
       }).save();
-      this.set('newItem', '')
+      this.set('newItem', '');
     },
     destroyItem(food){
       food.destroyRecord();
