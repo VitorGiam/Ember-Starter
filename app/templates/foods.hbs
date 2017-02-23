@@ -6,14 +6,14 @@
     {{#each model as |food|}}
       {{#if food.isAvaliable}}
         <li>
-          {{#link-to 'food' food.name}}{{food.name}}!{{/link-to}}
+          {{#link-to 'food' food.name}}{{food.name}}{{/link-to}}
         <button {{action 'makeUnavaliable' food}}> Desabilitar</button>
         </li>
       {{else}}
         <li class = "not-avaliable">{{food.name}}
-        <button {{action 'makeAvaliable' food}}> Habilitar</button>
-        <button {{action 'destroyItem' food}}> Destruir </button>
-      </li>
+          <button {{action 'makeAvaliable' food}}> Habilitar</button>
+          <button {{action 'destroyItem' food}}> Destruir </button>
+        </li>
       {{/if}}
     {{/each}}
 </ul>
