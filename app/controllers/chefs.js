@@ -21,13 +21,13 @@ export default Ember.Controller.extend({
       Ember.set(chef, 'isHere', true);
       chef.save();
     },
-    saveNewItem(){
-      this.store.createRecord('chef',{
-        isHere: true,
-        name: this.get('newItem')
-      }).save();
-      this.set('newItem', '');
-    },
+    // saveNewItem(){
+    //   this.store.createRecord('chef',{
+    //     isHere: true,
+    //     name: this.get('newItem')
+    //   }).save();
+    //   this.set('newItem', '');
+    // },
     destroyItem(chef){
       chef.destroyRecord();
     }
