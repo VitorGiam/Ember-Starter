@@ -10,9 +10,11 @@ Router.map(function() {
   this.route('contact');
   this.route('about');
   this.route('foods');
-  this.route('food', {path: '/food/:name' });
-  this.route('page-not-found', { path: '/*wildcard' });
-  //this.route('favor', { path: '/favors/:id' });
+  this.route('food', {path: '/food/:name'});
+  this.route('chefs');
+  this.route('chef', {path: '/chef/:name'});
+  this.route('page-not-found', { path: '/*wildcard'});
+  this.route('training');
 });
 
 export default Router;

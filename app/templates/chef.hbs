@@ -1,1 +1,8 @@
 
+{{outlet}}
+<h1>Chef {{model.name}} </h1>
+<ul>
+  {{#each model as |details|}}
+    <li>{{details.name}}</li>
+  {{/each}}
+</ul>
