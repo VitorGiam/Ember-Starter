@@ -1,8 +1,19 @@
 @import "bootstrap";
 
 li{
-  color: red;
+  color: black;
 }
 li.not-avaliable{
   color: gray;
+}
+.container{
+background-color: #ccc !important;
+}
+
+#column-two{
+position: relative;;
+min-width: 300px;
+}
+.float-right{
+  float: right;
 }

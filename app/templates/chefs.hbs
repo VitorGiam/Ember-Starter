@@ -1,18 +1,31 @@
   <div class="container">
-    <h1>Chefes disponíveis na cozinha</h1>
-    <ul>
-      <h4>{{availableItemsTotal}} de {{menuLength}} chefes disponíveis</h4>
-        {{#each model as |chef|}}
-        {{#if chef.isHere}}
-            <li>
-              {{#link-to 'chef' chef.name}}{{chef.name}}{{/link-to}}
-            <button {{action 'makeUnavaliable' chef}}> Desabilitar</button>
-            </li>
-          {{else}}
-            <li class = "not-avaliable">{{chef.name}}
-              <button {{action 'makeAvaliable' chef}}> Habilitar</button>
-            </li>
-          {{/if}}
-        {{/each}}
-    </ul>
-  </div>
+    <h4>{{availableItemsTotal}} de {{menuLength}} chefes disponíveis</h4>
+    <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Complete name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |chef|}}
+        <tr>
+          <td>
+            {{#link-to 'chef' chef.name}}
+            {{chef.name}}
+            {{/link-to}}
+          </td>
+          <td id="column-two">
+            <button class="float-right"> Excluir</button>
+            <button class="float-right"> Editar</button>
+            {{#if chef.isHere}}
+              <button class="float-right" {{action 'makeUnavaliable' chef}}> Desabilitar</button>
+            {{else}}
+                <button class="float-right" {{action 'makeAvaliable' chef}}> Habilitar</button>
+            {{/if}}
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

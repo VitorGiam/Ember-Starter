@@ -10,7 +10,8 @@ Router.map(function() {
   this.route('contact');
   this.route('navbar');
   this.route('about');
-  this.route('foods');
+
+  this.route('foods', function() {});
   this.route('food', {path: '/food/:name'});
   this.route('chefs');
   this.route('chef', {path: '/chef/:name'});

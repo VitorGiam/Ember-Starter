@@ -9,9 +9,7 @@ export default Ember.Controller.extend({
   availableItemsTotal: Ember.computed('availableItems', function(){
     return this.get('availableItems.length');
   }),
-  //https://www.emberschool.com/course/1/73
-  //Creating and Destroying Records :: Computing your Properties
-
+  
   actions:{
     makeUnavaliable(food){
       Ember.set(food, 'isAvaliable', false);

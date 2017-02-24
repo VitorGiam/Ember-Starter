@@ -1,25 +1,37 @@
-<h1>Bem-vindo ao restaurante: {{restaurant.nome}}, aberto {{restaurant.hoursOpen}} horas</h1>
-
-<p id="explanation">O melhores pratos gourmet da região de Narnia</p>
-<ul>
-  <h4>{{availableItemsTotal}} de {{menuLength}} pratos disponíveis</h4>
-    {{#each model as |food|}}
-      {{#if food.isAvaliable}}
-        <li>
-          {{#link-to 'food' food.name}}{{food.name}}{{/link-to}}
-        <button {{action 'makeUnavaliable' food}}> Desabilitar</button>
-        </li>
-      {{else}}
-        <li class = "not-avaliable">{{food.name}}
-          <button {{action 'makeAvaliable' food}}> Habilitar</button>
-          <button {{action 'destroyItem' food}}> Destruir </button>
-        </li>
-      {{/if}}
-    {{/each}}
-</ul>
-<hr>
-<p>Adicionar prato</p>
-{{input value = newItem}}
-<button {{action 'saveNewItem'}}>Salvar</button>
-
-<input type="text" class="form-control" placeholder="Text input">
+<div id = "teste" class="container">
+    <h1>Bem-vindo ao restaurante: {{restaurant.nome}}, aberto {{restaurant.hoursOpen}} horas</h1>
+    <p id="explanation">O melhores pratos gourmet da região de Narnia</p>
+    <h4>{{availableItemsTotal}} de {{menuLength}} pratos disponíveis</h4>
+    <table class="table">
+      <thead>
+        <tr>
+          <td>Comida</td>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model as |food|}}
+          <tr>
+            <td>
+              {{#link-to 'food' food.name}}
+              {{food.name}}
+              {{/link-to}}
+            </td>
+            <td id="column-two">
+              <button class="float-right"> Editar</button>
+              <button class="float-right"> Excluir</button>
+              {{#if food.isAvaliable}}
+                <button class="float-right" {{action 'makeUnavaliable' food}}> Desabilitar</button>
+              {{else}}
+                  <button class="float-right" {{action 'makeAvaliable' food}}> Habilitar</button>
+              {{/if}}
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <hr>
+      <p>Adicionar prato</p>
+      {{input value = newItem}}
+      <button {{action 'saveNewItem'}}>Salvar</button>
+      <br><br><br>
+</div>
