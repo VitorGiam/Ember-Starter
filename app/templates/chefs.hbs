@@ -16,7 +16,7 @@
             {{/link-to}}
           </td>
           <td id="column-two">
-            <button class="float-right"> Excluir</button>
+            <button class="float-right" {{action 'destroyItem' chef}}> Excluir</button>
             <button class="float-right"> Editar</button>
             {{#if chef.isHere}}
               <button class="float-right" {{action 'makeUnavaliable' chef}}> Desabilitar</button>

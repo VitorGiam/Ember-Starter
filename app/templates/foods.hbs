@@ -18,7 +18,7 @@
             </td>
             <td id="column-two">
               <button class="float-right"> Editar</button>
-              <button class="float-right"> Excluir</button>
+              <button class="float-right" {{action 'destroyItem' food}} > Excluir</button>
               {{#if food.isAvaliable}}
                 <button class="float-right" {{action 'makeUnavaliable' food}}> Desabilitar</button>
               {{else}}
