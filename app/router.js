@@ -10,21 +10,13 @@ Router.map(function() {
   this.route('contact');
   this.route('navbar');
   this.route('about');
-
-  this.route('foods', function() {});
-  this.route('food', {path: '/food/:name'});
-  this.route('chefs');
-  this.route('chef', {path: '/chef/:name'});
   this.route('page-not-found', { path: '/*wildcard'});
-  this.route('libraries', function() {
-    this.route('new');
-  });
 
-  this.route('training', function() {
-    this.route('trainer', {path: '/trainer/:name'} );
-    this.route('new');
-    this.route('edit');
-  });
+  this.route('foods');
+  this.route('food', {path: 'foods/food/:name'});
+
+  this.route('chefs');
+  this.route('chef', {path: 'chefs/chefs/chef/:name'});
 });
 
 export default Router;
