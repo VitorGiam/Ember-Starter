@@ -6,9 +6,10 @@
     <table class="table table-hover table-responsive">
       <thead>
         <tr>
-          <td><b>Disponibilidade</b></td>
+          <td><b>Ativo</b></td>
           <td><b>Comida</b></td>
           <td><b>Status</b></td>
+          <td><b>Ações</b></td>
         </tr>
       </thead>
       <tbody>
@@ -23,7 +24,7 @@
             </td>
             <td id="colum-name">
               {{#link-to 'food' food.name}}
-              {{food.name}}
+              <b>{{food.name}}</b>
               {{/link-to}}
             </td>
             <td id="colum-status">
