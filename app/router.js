@@ -17,8 +17,10 @@ Router.map(function() {
 
   this.route('chefs');
   this.route('chef', {path: 'chef/:name'});
-  this.route('edit-product', {path: 'edit-product/:name'});
-  this.route('edit-chef');
+  this.route('edit-food', {path: 'edit-food/:name'});
+  this.route('edit-chef', {path: 'edit-chef/:name'});
+  this.route('new-chef');
+  this.route('new-food');
 });
 
 export default Router;
