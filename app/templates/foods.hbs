@@ -1,29 +1,43 @@
 <div id = "teste" class="container">
     <h1>Bem-vindo ao restaurante: {{restaurant.nome}}, aberto {{restaurant.hoursOpen}} horas</h1>
-    <p id="explanation">O melhores pratos gourmet da região de Narnia</p>
-    <h4>{{availableItemsTotal}} de {{menuLength}} pratos disponíveis</h4>
-    <table class="table">
+    <h2 id="explanation">O melhores pratos gourmet da região de Narnia</h2>
+    <h3>{{availableItemsTotal}} de {{menuLength}} pratos disponíveis</h3>
+    <br>
+    <table class="table table-hover table-responsive">
       <thead>
         <tr>
-          <td>Comida</td>
+          <td><b>Disponibilidade</b></td>
+          <td><b>Comida</b></td>
+          <td><b>Status</b></td>
         </tr>
       </thead>
       <tbody>
         {{#each model as |food|}}
           <tr>
-            <td>
+            <td id="colum-disponibility">
+              {{#if food.isAvaliable}}
+                <input type="checkbox" checked={{food.isAvaliable}} {{action 'makeUnavaliable' food}}>
+              {{else}}
+                <input type="checkbox" checked={{food.isAvaliable}} {{action 'makeAvaliable' food}}>
+              {{/if}}
+            </td>
+            <td id="colum-name">
               {{#link-to 'food' food.name}}
               {{food.name}}
               {{/link-to}}
             </td>
-            <td id="column-two">
-              <button class="float-right"> Editar</button>
-              <button class="float-right" {{action 'destroyItem' food}} > Excluir</button>
+            <td id="colum-status">
               {{#if food.isAvaliable}}
-                <button class="float-right" {{action 'makeUnavaliable' food}}> Desabilitar</button>
+                Disponivel
               {{else}}
-                  <button class="float-right" {{action 'makeAvaliable' food}}> Habilitar</button>
+                Indisponivel
               {{/if}}
+            </td>
+            <td id="colum-options">
+              {{#link-to 'edit-product' food.name}}
+              <button type="button" class="btn btn-primary">Editar</button>
+              {{/link-to}}
+              <button type="button" class="btn btn-danger" {{action 'destroyItem' food}}> Excluir</button>
             </td>
           </tr>
         {{/each}}

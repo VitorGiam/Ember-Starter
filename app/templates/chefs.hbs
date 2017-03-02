@@ -1,28 +1,42 @@
   <div class="container">
     <h4>{{availableItemsTotal}} de {{menuLength}} chefes disponíveis</h4>
     <br>
-  <table class="table">
+    <table class="table table-hover table-responsive">
     <thead>
       <tr>
-        <th>Complete name</th>
+        <th><b>Disponibilidade</b></th>
+        <th><b>Chefe</b></th>
+        <th><b>Status</b></th>
+        <th><b>Ações</b></th>
       </tr>
     </thead>
     <tbody>
       {{#each model as |chef|}}
         <tr>
-          <td>
+          <td id="colum-disponibility">
+            {{#if chef.isHere}}
+              <input type="checkbox" checked={{chef.isHere}} {{action 'makeUnavaliable' chef}}>
+            {{else}}
+              <input type="checkbox" checked={{chef.isHere}} {{action 'makeAvaliable' chef}}>
+            {{/if}}
+          </td>
+          <td id="colum-name">
             {{#link-to 'chef' chef.name}}
             {{chef.name}}
             {{/link-to}}
           </td>
-          <td id="column-two">
-            <button class="float-right" {{action 'destroyItem' chef}}> Excluir</button>
-            <button class="float-right"> Editar</button>
+          <td id="colum-status">
             {{#if chef.isHere}}
-              <button class="float-right" {{action 'makeUnavaliable' chef}}> Desabilitar</button>
+              Disponivel
             {{else}}
-                <button class="float-right" {{action 'makeAvaliable' chef}}> Habilitar</button>
+              Indisponivel
             {{/if}}
+          </td>
+          <td id="colum-options">
+            {{#link-to 'edit-product' chef.name}}
+              <button type="button" class="btn btn-primary">Editar</button>
+            {{/link-to}}
+            <button type="button" class="btn btn-danger" {{action 'destroyItem' chef}}> Excluir</button>
           </td>
         </tr>
       {{/each}}

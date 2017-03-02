@@ -13,10 +13,12 @@ Router.map(function() {
   this.route('page-not-found', { path: '/*wildcard'});
 
   this.route('foods');
-  this.route('food', {path: 'foods/food/:name'});
+  this.route('food', {path: 'food/:name'});
 
   this.route('chefs');
-  this.route('chef', {path: 'chefs/chefs/chef/:name'});
+  this.route('chef', {path: 'chef/:name'});
+  this.route('edit-product', {path: 'edit-product/:name'});
+  this.route('edit-chef');
 });
 
 export default Router;

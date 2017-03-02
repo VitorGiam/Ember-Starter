@@ -1,19 +1,25 @@
 @import "bootstrap";
 
-li{
-  color: black;
-}
-li.not-avaliable{
-  color: gray;
-}
 .container{
 background-color: #ccc !important;
+min-width: 500px;
 }
 
-#column-two{
-position: relative;;
-min-width: 300px;
+#colum-name{
+    min-width: 100px;
 }
-.float-right{
-  float: right;
+
+#colum-disponibility{
+    width: 100px;
+}
+
+#colum-status{
+  min-width: 100px;
+  position: relative;
+}
+
+#colum-options{
+min-width: 80px;
+max-width: 400px;
+position: relative;
 }

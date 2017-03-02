@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
   availableItemsTotal: Ember.computed('availableItems', function(){
     return this.get('availableItems.length');
   }),
-  
+
   actions:{
     makeUnavaliable(food){
       Ember.set(food, 'isAvaliable', false);
@@ -29,6 +29,13 @@ export default Ember.Controller.extend({
     destroyItem(food){
       food.destroyRecord();
     }
+    // statusItem(isAvaliable){
+    //   if(isAvaliable==true){
+    //     return("Disponivel")
+    //   }else{
+    //     return("Indisponível")
+    //   }
+    //}
   }
 });
 /*
