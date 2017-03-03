@@ -1,17 +1,18 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
-  newItem: null,
+// const { get } = Ember; //baby
 
+export default Ember.Controller.extend({
   actions:{
 
     saveNewItem(){
-      this.store.createRecord('food',{
-        isAvaliable: false,
-        name: this.get('newItem')
+      // console.log(Ember) //baby
+      this.store.createRecord('food', {
+        name: { teste: this.get('newName') },
+        description: this.get('newDescription'),
+        seasoning: this.get('newSeasoning'),
+        ingerdient: this.get('newIngerdient')
       }).save();
-      this.set('newItem', '');
     }
-
   }
 });

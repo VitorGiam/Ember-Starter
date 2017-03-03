@@ -21,6 +21,11 @@ Router.map(function() {
   this.route('edit-chef', {path: 'edit-chef/:name'});
   this.route('new-chef');
   this.route('new-food');
+
+
+  this.route('minions', function() {
+    this.route('minions');
+  });
 });
 
 export default Router;

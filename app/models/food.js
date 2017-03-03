@@ -3,5 +3,8 @@ import attr from 'ember-data/attr';
 
 export default DS.Model.extend({
   name: attr('string'),
-  isAvaliable: attr('boolean')
+  isAvaliable: attr('boolean'),
+  seasoning: attr('string'),
+  ingerdient: attr('string'),
+  description: attr('string')
 });

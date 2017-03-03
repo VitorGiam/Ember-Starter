@@ -2,8 +2,11 @@
   <div class="container">
   <h1>Adicionar prato</h1>
   <div>
-    Nome:{{input value = newItem}}
-    <button {{action 'saveNewItem'}}>Salvar</button>
+    Nome:{{input value = newName}}
+    Descrição:{{input value = newDescription}}
+    Tempero:{{input value = newSeasoning}}
+    ingerdientes:{{input value = newIngerdient}}
+    <button type="button" class="btn btn-success" {{action 'saveNewItem'}}>Salvar</button>
   </div>
     <br><br>
 </div>

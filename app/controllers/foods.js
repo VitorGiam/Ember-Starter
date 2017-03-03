@@ -19,23 +19,16 @@ export default Ember.Controller.extend({
       Ember.set(food, 'isAvaliable', true);
       food.save();
     },
-    saveNewItem(){
-      this.store.createRecord('food',{
-        isAvaliable: false,
-        name: this.get('newItem')
-      }).save();
-      this.set('newItem', '');
-    },
+    // saveNewItem(){
+    //   this.store.createRecord('food',{
+    //     isAvaliable: false,
+    //     name: this.get('newItem')
+    //   }).save();
+    //   this.set('newItem', '');
+    // },
     destroyItem(food){
       food.destroyRecord();
     }
-    // statusItem(isAvaliable){
-    //   if(isAvaliable==true){
-    //     return("Disponivel")
-    //   }else{
-    //     return("Indisponível")
-    //   }
-    //}
   }
 });
 /*

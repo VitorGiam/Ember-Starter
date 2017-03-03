@@ -1,12 +1,14 @@
 {{outlet}}
 <div class="container">
   <h1>Adicionar chef</h1>
-  Nome:{{input value = newName}}
-  Fama:{{input value = newFame}}
-  Saúde:{{input value = newJealth}}
-  Numbero de estudantes:{{input value = newNumberStudents}}
-  Imagem:{{input value = newImageUrl}}
-  Restaurante:{{input value = newImageUrl}}
-  <button {{action 'saveNewItem'}}>Salvar</button>
+  nome:{{input value = newName}}
+  fama:{{input value = newFame}}
+  saúde:{{input value = newJealth}}
+  numbero de estudantes:{{input value = newNumberStudents}}
+  imagem:{{input value = newImageUrl}}
+  restaurante:{{input value = newRestaurante}}
+  imageUrl:{{input value = newImageUrl}}
+
+  <button type="button" class="btn btn-success" {{action 'saveNewItem'}}> Salvar</button>
   <br><br>
 </div>

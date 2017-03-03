@@ -5,25 +5,29 @@ background-color: #ccc !important;
 min-width: 500px;
 }
 
-#colum-name{
-    min-width: 100px;
+#colum-disponibility{
+  width: 60px !important;
 }
 
-#colum-disponibility{
-    width: 100px;
+#colum-name{
+  min-width: 80px;
 }
 
 #colum-status{
-  min-width: 100px;
+  min-width: 60px;
   position: relative;
 }
 
 #colum-options{
-min-width: 80px;
-max-width: 400px;
+width: 200px;
 position: relative;
+flex-direction: right;
 }
 
 #explanation{
 font-style: italic;
+}
+
+.fieldSearch{
+  size: 50px;
 }
