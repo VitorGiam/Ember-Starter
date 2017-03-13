@@ -12,5 +12,5 @@ export default DS.Model.extend({
   name: attr(),
   numberStudents: attr(),
   restaurant: attr()
-  
+
 });

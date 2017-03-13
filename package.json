@@ -38,7 +38,8 @@
     "ember-source": "~2.11.0",
     "ember-welcome-page": "^2.0.2",
     "yadda": "^1.2.0",
-    "loader.js": "^4.0.10"
+    "loader.js": "^4.0.10",
+    "emberfire": "github:firebase/emberfire#master"
   },
   "engines": {
     "node": ">= 0.12.0"
