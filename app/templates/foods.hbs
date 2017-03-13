@@ -1,7 +1,6 @@
-<div id = "teste" class="container">
+<div id = "teste">
     <h1>Bem-vindo ao restaurante: {{restaurant.nome}}, aberto {{restaurant.hoursOpen}} horas</h1>
     <p id="explanation"> Os melhores pratos gourmet da região de Narnia</p>
-    <br>
     <hr>
     <div>
       {{#link-to 'new-food'}}
@@ -11,7 +10,7 @@
       {{input type="text" value=search id="fieldSearch"}}<button type="button" class="btn btn-primary">Search</button>
     </div>
     <br>
-    <table class="table table-hover table-responsive">
+    <table class="table table-hover table-responsive" id="tableMaster">
       <thead>
         <tr>
           <td><b>Ativo</b></td>
@@ -31,9 +30,7 @@
               {{/if}}
             </td>
             <td id="colum-name">
-              {{#link-to 'food' food.name}}
-              <b>{{food.name}}</b>
-              {{/link-to}}
+              {{food.name}}
             </td>
             <td id="colum-status">
               {{#if food.isAvaliable}}
@@ -43,8 +40,11 @@
               {{/if}}
             </td>
             <td id="colum-options">
-              {{#link-to 'edit-food' food.name}}
-              <button type="button" class="btn btn-primary">Editar</button>
+              {{#link-to 'edit-food' food.id}}
+                <button type="button" class="btn btn-primary">Editar</button>
+              {{/link-to}}
+              {{#link-to 'foods.food' food_id}}
+                <button type="button" class="btn btn-success">Visualisar</button>
               {{/link-to}}
               <button type="button" class="btn btn-danger" {{action 'destroyItem' food}}> Excluir</button>
             </td>
@@ -54,4 +54,7 @@
     </table>
     <p>{{availableItemsTotal}} de {{menuLength}} pratos disponíveis</p>
     <br>
+    <div class="flex-item">
+      {{outlet}}
+    </div>
 </div>

@@ -1,31 +1,33 @@
 @import "bootstrap";
 
-.container{
-background-color: #ccc !important;
-min-width: 500px;
-}
-
 #colum-disponibility{
-  width: 60px !important;
+  width: 60px;
 }
 
 #colum-name{
-  min-width: 80px;
+  width: 80px;
 }
 
 #colum-status{
-  min-width: 60px;
-  position: relative;
+  width: 60px;
 }
 
 #colum-options{
-width: 200px;
-position: relative;
-flex-direction: right;
+  width: 250px;
 }
 
 #explanation{
-font-style: italic;
+  font-style: italic;
+}
+
+
+#teste{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#tableMaster{
+  max-width: 500px;
 }
 
 .fieldSearch{

@@ -10,10 +10,13 @@ Router.map(function() {
   this.route('contact');
   this.route('navbar');
   this.route('about');
-  this.route('page-not-found', { path: '/*wildcard'});
 
-  this.route('foods');
-  this.route('food', {path: 'food/:name'});
+  this.route('foods', function(){
+   this.route('food', function(){
+     this.route('eating');
+   });
+ });
+  //this.route('food', {path: 'food/:name'});
 
   this.route('chefs');
   this.route('chef', {path: 'chef/:name'});
@@ -22,7 +25,7 @@ Router.map(function() {
   this.route('new-chef');
   this.route('new-food');
 
-
+  this.route('page-not-found', { path: '/*wildcard'});
   this.route('minions', function() {
     this.route('minions');
   });
