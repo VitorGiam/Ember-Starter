@@ -1,4 +1,13 @@
-# renans2
+# Ember Starter
+
+## How to install EmberJS!
+- Linux:
+*  npm install -g ember-cli
+*  ember new ember-quickstart
+* `git clone <repository-url>` this repository
+* `cd renans2`
+* `npm install`
+* `bower install`
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
@@ -13,12 +22,8 @@ You will need the following things properly installed on your computer.
 * [Ember CLI](https://ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
 
-## Installation
 
-* `git clone <repository-url>` this repository
-* `cd renans2`
-* `npm install`
-* `bower install`
+
 
 ## Running / Development
 
